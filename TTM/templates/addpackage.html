@@ -1,0 +1,76 @@
+{% extends 'adminhome.html'%}
+
+{% block body %}
+<style>
+    h2{
+    color :green;
+    }
+/* CSS */
+.button-39 {
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-39:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-39:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-39:focus-visible {
+  box-shadow: none;
+}
+td{
+    padding : 3px;
+}
+</style>
+<br>
+        <h2 align="center">Add Package</h2>
+{% for message in messages %}
+    <h3>{{ message }}</h3>
+{% endfor %}
+    <form method="post" action="{% url 'checkpackage' %}">
+        {% csrf_token %}
+        <table align="center" width="20%" height="40" border="">
+            <tr>
+                <td><label>Tourcode</label></td>
+                <td> <input type="text"  name="tourcode" required></td>
+            </tr>
+            <tr>
+                <td><label>Tourname</label></td>
+                <td><input type="text" name="tourname" required></td>
+            </tr>
+            <tr>
+                <td><label>Tourpackage</label></td>
+                <td><input type="text" name="tourpackage" required></td>
+            </tr>
+            <tr>
+                <td><label>Description</label></td>
+                <td><input type="text" name="desc" required></td>
+            </tr>
+            <tr align="center ">
+                <td><input  class="button-39" type="submit" value="Add"></td>
+                <td><input  class="button-39" type="reset" value="Clear"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

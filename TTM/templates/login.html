@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block b1 %}
+<head>
+    <title>Login</title>
+</head>
+        <h1 align="center">Login Page</h1>
+        <h3> {{ message }}</h3>
+        <form method="post" action="{% url 'checkadminlogin' %}">
+            {% csrf_token %}
+            <table align="center" width="20%" height="20%">
+                <tr align="center">
+                    <td><label>Username</label></td>
+                    <td><input type="text" name="uname" autocomplete="off" required></td>
+                </tr>
+                <tr align="center">
+                    <td><label>Password</label></td>
+                    <td><input type="password" name="pass" autocomplete="off" required /></td>
+                </tr>
+                <tr align="center">
+                    <td> <input type="submit" name="Login" class="button-55" /></td>
+                    <td> <input type="reset" name="Clear"  class="button-55" /></td>
+                </tr>
+            </table>
+        </form>
+{% endblock %}

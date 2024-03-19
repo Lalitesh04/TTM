@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="lightgrey">
+     <h1  align="center"><font color="green">Tourism & Travel Management</font></h1>
+     <h3 align="center"> User Portal</h3>
+     <a href="{% url 'userhome' %}">Home</a>  &nbsp;&nbsp;&nbsp;
+     <a href="{% url 'userpackage'%}" >View Packages</a>  &nbsp;&nbsp;
+     <a href="" >Change Password</a>    &nbsp;&nbsp;&nbsp;
+     <a href="">View Profile</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="">Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="{% url 'login'%}">Logout</a> &nbsp;&nbsp;&nbsp;
+{% block body%}
+{% endblock %}
+</body>
+</html>

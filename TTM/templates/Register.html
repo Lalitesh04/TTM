@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block b1 %}
+  <h3 style="text-align: center;">Sign up</h3>
+  <br>
+
+  <h4> {{ error_message }}</h4>
+  <form method="post" action="{% url 'checkregistation' %}">
+    <div style="margin: auto; width: 30%;">
+      <table style="margin: auto;" width="100%" cellspacing="0" cellpadding="5">
+        {% csrf_token %}
+        <tr align="center">
+          <td><label>Name</label></td>
+          <td><input type="text" name="name" autocomplete="off" required></td>
+        </tr>
+        <tr align="center">
+          <td><label>Email</label></td>
+          <td><input type="text" name="email" autocomplete="off" required></td>
+        </tr>
+        <tr align="center">
+          <td><label>Phone Number</label></td>
+          <td><input type="text" maxlength="10" minlength="10" name="phone" autocomplete="off" required></td>
+        </tr>
+        <tr>
+          <tr align="center">
+          <td><label>UserName </label></td>
+          <td><input type="text" name="uname" autocomplete="off" required></td>
+        </tr>
+        <tr align="center">
+          <td><label>Password</label></td>
+          <td><input type="password" name="password" autocomplete="off" required></td>
+        <tr align="center">
+          <td><label>Confirm Password</label></td>
+          <td><input type="password" name="cpassword" autocomplete="off" required></td>
+        </tr>
+
+        <tr align="center">
+                <td><input type="submit" value="Sign Up" class="button-55" /></td>
+                <td><input type="reset" value="Clear" class="button-55" /></td>
+        </tr>
+      </table>
+    </div>
+  </form>
+{% endblock %}
+<script>
+    alert('{{ error_message }}');
+</script>

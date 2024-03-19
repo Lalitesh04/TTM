@@ -1,0 +1,36 @@
+{% extends 'userhome.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+{% block body%}
+<style>
+       h2{
+        color:green;
+    }
+    h3{
+        color: #378BC2;
+    }
+</style>
+    <h2 align="center">View Packages</h2>
+    <h3>Total Packages : {{ count}}</h3>
+    <table align="center" width="20%" border="1">
+        <tr bgcolor="#3DF1F4">
+            <td>Tourcode</td>
+            <td>Tourname</td>
+            <td>Tourpackage</td>
+            <td>Description</td>
+        </tr>
+    {% for i in package%}
+        <tr>
+            <td> {{ i.tourcode }}</td>
+            <td> {{ i.tourname }}</td>
+            <td> {{ i.tourpackage }}</td>
+            <td> {{ i.desc }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+</html>
